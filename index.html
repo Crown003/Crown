@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>crownWeb.com</title>
+  </head>
+<style>
+:root {
+	--primaryColor:#8D3eff;
+	--fadePrimaryColor:#8a3efa;
+	--white: #ffffff;
+	--black: #212121;
+	--greyDark: #72727280;
+	--secondaryColor: #F44336;
+	--ancentColor: #ff5722;
+}
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+/* slide to up button (only for mobile use)*/
+#fxd{
+display:none;
+}
+html{
+scroll-behavior: smooth;
+}
+/* main container*/
+.container{
+	max-width:1000vh;
+	min-height:100vh;
+	height:100%;
+	width:100vw;
+	background:#f1f1f1;
+}
+
+/* Navbar Styling*/
+nav{
+  display: flex;
+  flex-direction: column;
+  font-family:Popins;
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background:var(--primaryColor);
+}
+.navbarIcon{
+  position:absolute;
+  right:.5em;
+  top:.5em;
+}
+.navbarIcon div{
+  height:4px;
+  width:30px;
+  background:#fff;
+  margin:4px 0;
+}
+.navbarLogo{
+  display:inline-block;
+}
+.navbarLogo img{
+	width:40px;
+	height:40px;
+}
+nav ul{
+  display:none;
+  list-style:none;
+  padding:.5em;
+  width:100%;
+  justify-content:flex-end;
+  margin:5px auto;
+  background:var(--fadePrimaryColor);
+}
+nav ul a{
+  text-decoration:none;
+}
+nav ul li{
+  color:#fff;
+  margin:.2em auto;
+  padding:5px; 
+}
+nav ul li:hover,nav ul li:focus{
+  background:var(--fadePrimaryColor);
+}
+
+/* Heading section*/
+.mainBanner{
+height:20vh;
+width:100vw;
+padding-top:40px;
+}
+.mainBanner>h2{
+color:#000;
+font-weight:600;
+padding:3em 1em;
+font-size:2.2em;
+font-family:arial;
+}
+.mainBanner h2 span{
+display:block;
+color:var(--primaryColor);
+font-size:2em;
+font-family:sans-sarif;
+}
+
+/* My introduction Section*/
+.secondarySection{
+/*height:30vh;*/
+width:100%;
+background:var(--primaryColor);
+}
+.secondarySection div{
+padding:1em;
+margin:0 auto;
+}
+.h2{
+font-size:3em;
+color:#fff;
+font-weight:500;
+font-family:'Verdana',Sans-sarif;
+}
+.secondarySection p{
+color:#fff;
+padding:10px 12px;
+margin:5% 2%;
+border-radius:11px;
+width:40%;
+background:#f1f1f150;
+font-size:1.7em;
+font-family:Geneva;
+font-weight:400;
+}
+.secondarySection img{
+position:absolute;
+right:20px;
+top:470px;
+width:500px;
+height:500px;
+}
+.hr{
+ height:2px;
+ background:#5500ff80;
+ width:98%
+}
+
+/* Coding intro section */
+.codingArea{
+/*margin:15px 0;*/
+/*height:30vh;*/
+width:100%;
+padding:20px;
+}
+.codingArea > h2{
+color:black;
+font-size:3.5em;
+font-family:arial;
+text-align:center;
+}
+.codingLangIntro{
+	width:100%;
+	height:90%;
+	padding:40px 20px;
+	display:flex;
+	justify-content: space-evenly;
+}
+.codingLangIntro div{
+	flex:1;
+	width:30%;
+	text-align:center;
+	margin:15px 10px;
+	border-radius:15px;
+	border:1px solid var(--primaryColor);
+}
+
+.codingLangIntro div img{
+	width:10em;
+	height:10em;
+	margin:5px;
+}
+.codingLangIntro div h5{
+	position:relative;
+	bottom:25px;
+	left:5px;
+	font-size:1.5em;
+}
+.codingLangIntro div p{
+	padding:5px 10px;
+}
+
+/* photo gallary */
+.contactMe{
+	/*height:30vh;*/
+	width:100%;
+	padding:10px;
+	background: #f2f2f2;
+}
+.contactMe h2{
+	font-size:3em;
+	font-family:Verdana;
+	padding-left:55px;
+	color:var(--fadePrimaryColor);
+}
+.contactMe .form{
+	display:flex;
+	margin:10px auto;
+	flex-direction:column;
+	padding:10px;
+	width:90%;
+}
+.contactMe .form label{
+	font-family:Popins;
+	font-weight:600;
+	color:#000;
+
+}
+.contactMe .form input[type="submit"]{
+	background:var(--ancentColor);
+	color:#fff;
+	width:20%;
+	font-weight:900;
+	font-family: arial;
+	text-align:center;
+	border:none;
+	outline:none;
+}
+.contactMe .form input,textarea{
+	background:transparent;
+	padding:8px 5px;
+	border:1px solid var(--fadePrimaryColor);
+	outline:none;
+	border-radius:8px;
+	margin:10px 0;
+}
+/* footer Styling */
+footer{
+display:flex;
+color:var(--white);
+z-index:1;
+width:100vw;
+height:10vh;
+background:var(--black);
+}
+.footMainContent{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	padding:5%;
+	border:1px solid white;
+	font-family:Popins;
+}
+.footMainContent h2{
+	font-size:2em;
+	line-height:30px;
+}
+.footMainContent h5,h6{
+	margin-top:10px;
+}
+.leftSide h3{
+text-align:center;
+padding:10px;
+font-size:1.5em;
+font-family:Monospace;
+}
+.leftSide{
+	border:1px solid white;
+	flex:.3;
+}
+.leftSide ul{
+	padding:15px;
+	position:relative;
+}
+.leftSide ul li{
+	list-style:none;
+	position:relative;
+	bottom:3px;
+	margin-left:25px;
+	line-height:30px;
+	font-family:Lucida Bright;
+}
+.leftSide ul a {
+text-decoration:none;
+color:var(--white);
+}
+.leftSide ul img{
+	position:absolute;
+	width:20px;
+	height:20px;
+}
+
+
+
+
+@media screen and (max-width:768px){
+	.mainBanner{
+		height:35vh;
+		width:100vw;
+		padding-top:40px;
+	}	
+	.mainBanner h2{
+		font-size:1.5em;
+		padding:3em .2em;
+	}
+	.mainBanner h2 span{
+		font-size:1.5em;
+	}
+	.secondarySection div h2{
+		font-size:2em;
+		padding-left:8px;
+	}
+	.secondarySection p{
+	font-size:1em;
+	width:auto;
+	border-radius:2px;
+	}
+	.secondarySection img{
+	display:none;
+	}
+	.hr{
+		display:none;
+	}
+	
+	.codingArea{
+	padding:20px  10px;
+	}
+	.codingArea > h2{
+	font-size:2.5em;
+	}
+	.codingLangIntro{
+		display:flex;
+		flex-direction:column;
+		justify-content: space-evenly;
+	}
+	.codingLangIntro div{
+		width:90%;
+		margin:6px auto;
+	}
+	.codingLangIntro div img{
+		width:8em;
+		height:8em;
+	}
+	.codingLangIntro div h5{
+		position:relative;
+		bottom:25px;
+		font-size:1em;
+	}
+	.codingLangIntro div p{
+		padding:5px 10px;
+		margin:10px 0;
+	}
+
+	#fxd{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:fixed;
+	right:10px;
+	bottom:10px;
+	background:var(--primaryColor);
+	border-radius:11px;
+	width:40px;
+	height:40px;
+	z-index:999;
+	}
+	/* footer Styling */
+	footer{
+	height:25vh;
+	}
+	.footMainContent{
+		flex:1;
+		display:flex;
+		flex-direction:column;
+		padding:5%;
+		border:1px solid var(--greyDark);
+	}
+	.footMainContent h2{
+		font-size:1.5em;
+		line-height:30px;
+	}
+	.footMainContent h5,h6{
+		margin-top:5px;
+	}
+	.leftSide h3{
+	padding:5px 10px;
+	font-size:1em;
+	font-family:Monospace;
+	}
+	.leftSide ul li{
+		list-style:none;
+		position:relative;
+		bottom:7px;
+		font-size:.7em;
+		margin-left:18px;
+	}
+	.leftSide ul img{
+		width:15px;
+		height:15px;
+	}	
+}
+  </style>
+  <body>
+  <div id="cont" class="container">
+  <a style="text-decoration:none;color:white;"href="#cont"><div id="fxd" >&#8593</div></a>
+  	<div class="header">
+	      <nav id="nav">
+	        <div class="navbarLogo">
+	          <img src="https://media.discordapp.net/attachments/842967344128721018/937010298009813052/Logo-1.png" alt="logo"/>
+	        </div>
+	        <div onclick="myFunction();" class="navbarIcon">
+	          <div></div>
+	          <div></div>
+	          <div></div> 
+	        </div>
+	        <ul id="navUL">
+	          <a href="#cont"><li>Home</li></a>
+	          <a href="#intro"><li>About me</li></a>
+	          <a href="#codingArea"><li>My Coding World</li></a>
+	          <a href="#contactMe"><li>Contact me</li></a>
+	        </ul>
+	      </nav>
+    </div>
+    <!-- Mainbanner secrion-->
+    <div id="mainBanner">
+	    <section class="mainBanner">
+	    	<h2 id="mainBannerH2">Welcome to my <span>Portfolio Website.</span></h2>
+	    </section>
+	   </div>
+	   <div id="intro">
+	    <section class="secondarySection">
+	    	<div>
+	    		<h2 class="h2">My Introduction</h2><hr class="hr">
+	    		<img src="https://media.discordapp.net/attachments/842967344128721018/937076976517271592/20220130_013910.png"  alt="introIllustration">
+	    		<p>&bull; My self Harshit. A student at Svm Sultanpur in 11<sup>th</sup> starndard.
+	    		</p>
+	    		<p>&bull; I am also a Full-Stack devloper.</p>
+	    		<p>&bull; This is My first Portfolio Website</p>
+	    	</div>
+	    </section>
+    </div>
+    <!--Coding Intro secrion-->
+    <div id="codingArea">
+	    <section class="codingArea">
+	    	<h2>My Coding Journey</h2>
+	    	<div class="codingLangIntro">
+	    		<div>
+	    			<img src="https://media.discordapp.net/attachments/842967344128721018/937449266065072139/20220131_021737.png"  alt="webdevlogo">
+	    			<h5>Web Devlopment</h5>
+	    			<p>2+ year of experience</p>
+	    			<p>Able to create a fully function website</p>
+	    			<p>friendly with Django,React(basic) & Flask.</p>
+	    		</div>
+	    		<div>
+	    			<img src="https://media.discordapp.net/attachments/842967344128721018/937449265821806632/20220131_021633.png"  alt="pythonprograminglanguage-logo">
+	    			<h5>Python</h5>
+	    			<p>Have Intermediate knowledge</p>
+	    			<p>Able to works at high level.</p>
+	    			<p> My first coding language.</p>
+	    		</div>
+	    		<div>
+	    			<img src="https://media.discordapp.net/attachments/842967344128721018/937449266295742484/20220131_021815.png" alt="javascriptprograminglanguage-logo">
+	    			<h5>JavaScript</h5>
+	    			<p>Have beginner level knowledge</p>
+	    			<p>Working on this for 6+ months</p>
+	    			<p>learning oops concepts...</p>
+	    		</div>
+	    	</div>
+	    </section>
+    </div>
+    <!--contact section-->
+    <div  id="contactMe">
+	    <section class="contactMe">
+	    	<h2>Contact Me</h2>
+	    		<Form autocomplete="off" name="Contact me" method="POST" class="form" action="#" name="google-form">
+	    			<label for="UserName"> Your Name:</label>
+	    			<input id="UserName" type="text" placeholder="Your name" name="UserName" required>
+	    			<label for="UserEmail"> Your Email:</label>
+	    			<input id="UserEmail" type="email" placeholder="example@gmail.com" name="UserEmail" required>
+	    			<label for="UserMsg"> Your Message:</label>
+	    			<textarea placeholder="Your message here..." id="UserMsg" rows="5" name="UserMsg" required></textarea>
+	    			<input type="submit" value="Submit">
+	    		</Form>
+	    </section>
+    </div>
+    <!--footer section-->
+      <footer>
+      	<div class="leftSide">
+      	<h3>My socials </h3>
+      		<ul>
+      			<a href="https://www.instagram.com/crown_003/" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427296086790204/20220131_005039.png"><li>crown_003</li></a>
+      			<a href="https://www.facebook.com/profile.php?id=100058274305775" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427295466045510/20220131_004952.png"><li>Harshit tiwari</li></a>
+      			<a href="https://twitter.com/crown_gaming21" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427295763857438/20220131_005012.png"><li>crown_gaming21</li></a>
+      			<a href="https://github.com/Crown003" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427295185010688/20220131_004923.png"><li>Crown003</li></a>
+      		</ul>
+      	</div>
+      	<div class="footMainContent">
+      		<h2>Thankyou for visiting my site.</h2>
+      		<h5> developed & managed by Crown.</h5>
+      		<h6>&copy 2022-23 | All rights reserved to Harshit.</h6>
+      	</div>
+    </footer>
+</div>   
+<script>
+let nav = document.getElementById("navUL");
+let mainH2 = document.getElementById("mainBannerH2");
+function myFunction(){
+  	if(nav.style.display === "block"){
+  		nav.style.display = "none";
+  		mainH2.style.padding = "3em .2em";
+  	}
+  	else{
+  		nav.style.display = "block";
+  		mainH2.style.padding = "5em .2em";
+  	}
+};
+let fname = document.getElemenetById("UserName");
+let femail = document.getElemenetById("UserName");
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxyyHjRUT-oRkaLGfRDTqikJu_lQFUcIEmvJa-peO20ZKGP0FCAXdZCaXspqXzFaEmtEg/exec' 
+const form = document.forms['Contact me'] 
+form.addEventListener('submit', e => { 
+	e.preventDefault() 
+	fetch(scriptURL, { method: 'POST', body: new FormData(form)}) 
+	.then(response => alert("Thanks for Contacting Me. I will Contact you soon...") ) 
+	.catch(error => console.error('Error!', error.message)) });
+	</script>
+</body>
+</html>
