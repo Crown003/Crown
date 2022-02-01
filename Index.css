@@ -1,1 +1,388 @@
+:root {
+	--primaryColor:#8D3eff;
+	--fadePrimaryColor:#8a3efa;
+	--white: #ffffff;
+	--black: #212121;
+	--greyDark: #72727280;
+	--secondaryColor: #F44336;
+	--ancentColor: #ff5722;
+}
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+/* slide to up button (only for mobile use)*/
+#fxd{
+display:none;
+}
+html{
+scroll-behavior: smooth;
+}
+/* main container*/
+.container{
+	max-width:1000vh;
+	min-height:100vh;
+	height:100%;
+	width:100vw;
+	background:#f1f1f1;
+}
 
+/* Navbar Styling*/
+nav{
+  display: flex;
+  flex-direction: column;
+  font-family:Popins;
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background:var(--primaryColor);
+}
+.navbarIcon{
+  position:absolute;
+  right:.5em;
+  top:.5em;
+}
+.navbarIcon div{
+  height:4px;
+  width:30px;
+  background:#fff;
+  margin:4px 0;
+}
+.navbarLogo{
+  display:inline-block;
+}
+.navbarLogo img{
+	width:40px;
+	height:40px;
+}
+nav ul{
+  display:none;
+  list-style:none;
+  padding:.5em;
+  width:100%;
+  justify-content:flex-end;
+  margin:5px auto;
+  background:var(--fadePrimaryColor);
+}
+nav ul a{
+  text-decoration:none;
+}
+nav ul li{
+  color:#fff;
+  margin:.2em auto;
+  padding:5px; 
+}
+nav ul li:hover,nav ul li:focus{
+  background:var(--fadePrimaryColor);
+}
+
+/* Heading section*/
+.mainBanner{
+width:100vw;
+display:flex;
+align-items:center;
+margin:20px auto;
+}
+.mainBanner>h2{
+color:#000;
+font-weight:600;
+padding:3em 1em;
+font-size:2.2em;
+font-family:arial;
+}
+.mainBanner h2 span{
+display:block;
+color:var(--primaryColor);
+font-size:2em;
+font-family:sans-sarif;
+}
+
+/* My introduction Section*/
+.secondarySection{
+/*height:30vh;*/
+width:100%;
+background:var(--primaryColor);
+position:relative;
+}
+.secondarySection div{
+padding:1em .8em;
+margin:0 auto;
+}
+.h2{
+font-size:3em;
+color:#fff;
+font-weight:500;
+font-family:'Verdana',Sans-sarif;
+}
+.secondarySection p{
+color:#fff;
+padding:10px 12px;
+margin:5% 2%;
+border-radius:11px;
+width:40%;
+background:#f1f1f150;
+font-size:1.7em;
+font-family:Geneva;
+font-weight:400;
+}
+.secondarySection img{
+position:absolute;
+right:1px;
+width:500px;
+height:500px;
+}
+.hr{
+ height:2px;
+ background:#5500ff80;
+ width:98%
+}
+
+/* Coding intro section */
+.codingArea{
+width:100%;
+padding:20px;
+}
+.codingArea > h2{
+color:black;
+font-size:3.5em;
+font-family:arial;
+text-align:center;
+}
+.codingLangIntro{
+	width:100%;
+	height:90%;
+	padding:40px 20px;
+	display:flex;
+	justify-content: space-evenly;
+}
+.codingLangIntro div{
+	flex:1;
+	width:30%;
+	text-align:center;
+	margin:15px 10px;
+	border-radius:15px;
+	border:1px solid var(--primaryColor);
+}
+
+.codingLangIntro div img{
+	width:10em;
+	height:10em;
+	margin:5px;
+}
+.codingLangIntro div h5{
+	position:relative;
+	bottom:25px;
+	left:5px;
+	font-size:1.5em;
+}
+.codingLangIntro div p{
+	padding:5px 10px;
+}
+
+/* photo gallary */
+.contactMe{
+	width:100%;
+	padding:10px;
+	background: #f2f2f2;
+}
+.contactMe h2{
+	font-size:3em;
+	font-family:Verdana;
+	padding-left:55px;
+	color:var(--fadePrimaryColor);
+}
+.contactMe .form{
+	display:flex;
+	margin:10px auto;
+	flex-direction:column;
+	padding:10px;
+	width:90%;
+}
+.contactMe .form label{
+	font-family:Popins;
+	font-weight:600;
+	color:#000;
+
+}
+.contactMe .form input[type="submit"]{
+	background:var(--ancentColor);
+	color:#fff;
+	width:20%;
+	font-weight:900;
+	font-family: arial;
+	text-align:center;
+	border:none;
+	outline:none;
+}
+.contactMe .form input,textarea{
+	background:transparent;
+	padding:8px 5px;
+	border:1px solid var(--fadePrimaryColor);
+	outline:none;
+	border-radius:8px;
+	margin:10px 0;
+}
+/* footer Styling */
+footer{
+display:flex;
+color:var(--white);
+z-index:1;
+width:100vw;
+height:100%;
+background:var(--black);
+}
+.footMainContent{
+	flex:1;
+	display:flex;
+	flex-direction:column;
+	padding:5%;
+	border:1px solid white;
+	font-family:Popins;
+}
+.footMainContent h2{
+	font-size:2em;
+	line-height:30px;
+}
+.footMainContent h5,h6{
+	margin-top:10px;
+}
+.leftSide h3{
+text-align:center;
+padding:10px;
+font-size:1.5em;
+font-family:Monospace;
+}
+.leftSide{
+	border-right:.5px solid white;
+	flex:.3;
+}
+.leftSide ul{
+	padding:15px;
+	position:relative;
+}
+.leftSide ul li{
+	list-style:none;
+	position:relative;
+	bottom:3px;
+	margin-left:25px;
+	line-height:30px;
+	font-family:Lucida Bright;
+}
+.leftSide ul a {
+text-decoration:none;
+color:var(--white);
+}
+.leftSide ul img{
+	position:absolute;
+	width:20px;
+	height:20px;
+}
+
+@media screen and (max-width:768px){
+	.mainBanner{
+		height:35vh;
+		width:100vw;
+		padding-top:40px;
+	}	
+	.mainBanner h2{
+		font-size:1.5em;
+		padding:3em 1em;
+	}
+	.mainBanner h2 span{
+		font-size:1.5em;
+	}
+	.secondarySection div h2{
+		font-size:2em;
+		padding-left:8px;
+	}
+	.secondarySection p{
+	font-size:1em;
+	width:auto;
+	border-radius:2px;
+	}
+	.secondarySection img{
+	display:none;
+	}
+	.hr{
+		display:none;
+	}
+	
+	.codingArea{
+	padding:20px  10px;
+	}
+	.codingArea > h2{
+	font-size:2.5em;
+	}
+	.codingLangIntro{
+		display:flex;
+		flex-direction:column;
+		justify-content: space-evenly;
+	}
+	.codingLangIntro div{
+		width:90%;
+		margin:6px auto;
+	}
+	.codingLangIntro div img{
+		width:8em;
+		height:8em;
+	}
+	.codingLangIntro div h5{
+		position:relative;
+		bottom:25px;
+		font-size:1em;
+	}
+	.codingLangIntro div p{
+		padding:5px 10px;
+		margin:10px 0;
+	}
+
+	#fxd{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:fixed;
+	right:10px;
+	bottom:10px;
+	background:var(--primaryColor);
+	border-radius:11px;
+	width:40px;
+	height:40px;
+	z-index:999;
+	}
+	/* footer Styling */
+	footer{
+	height:100%;
+	}
+	.footMainContent{
+		flex:1;
+		display:flex;
+		flex-direction:column;
+		padding:2% 3%;
+		justify-content:center;
+	}
+	.footMainContent h2{
+		font-size:1.1em;
+		line-height:20px;
+	}
+	.footMainContent h5,h6{
+		margin-top:5px;
+	}
+	.leftSide h3{
+	padding:5px 10px;
+	font-size:1em;
+	font-family:Monospace;
+	}
+	.leftSide ul li{
+		list-style:none;
+		position:relative;
+		bottom:7px;
+		font-size:.7em;
+		margin-left:18px;
+	}
+	.leftSide ul img{
+		width:15px;
+		height:15px;
+	}	
+}
