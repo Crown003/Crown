@@ -468,13 +468,13 @@ color:var(--white);
     <div  id="contactMe">
 	    <section class="contactMe">
 	    	<h2>Contact Me</h2>
-	    		<Form autocomplete="off" method="POST" name="Contact" class="form" action="#">
-	    			<label for="UserName"> Your Name:</label>
-	    			<input id="UserName" type="text" placeholder="Your name" name="UserName" required>
-	    			<label for="UserEmail"> Your Email:</label>
-	    			<input id="UserEmail" type="email" placeholder="example@gmail.com" name="UserEmail" required>
-	    			<label for="UserMsg"> Your Message:</label>
-	    			<textarea placeholder="Your message here..." id="UserMsg" rows="5" name="UserMsg" required></textarea>
+	    		<Form autocomplete="off" name="contact" class="form">
+	    			<label for="UName"> Your Name:</label>
+	    			<input id="UName" type="text" placeholder="Your name" name="UserName" required>
+	    			<label for="UEmail"> Your Email:</label>
+	    			<input id="UEmail" type="email" placeholder="example@gmail.com" name="UserEmail" required>
+	    			<label for="UMsg"> Your Message:</label>
+	    			<textarea placeholder="Your message here..." id="UMsg" rows="5" name="UserMsg" required></textarea>
 	    			<input type="submit" value="Submit">
 	    		</Form>
 	    </section>
@@ -508,6 +508,13 @@ function myFunction(){
   		nav.style.display = "block";
   	}
 };
+let name = document.getElementById("UName");
+const scriptURL = 'https://script.google.com/macros/s/AKfycbx4HNyJRCesqF_ejMLKTt2JfR0bcP2fQj0Zua9MDCSYv-m8gN3doubeDa73K091B9Uh/exec'
+const form = document.forms['contact'] 
+form.addEventListener('submit', e => { 
+    e.preventDefault() 
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+    .catch(error => console.error('Error!', error.message)) });
 	</script>
 </body>
 </html>
