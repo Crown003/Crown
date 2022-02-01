@@ -88,11 +88,10 @@ nav ul li:hover,nav ul li:focus{
 
 /* Heading section*/
 .mainBanner{
-height:30vh;
 width:100vw;
 display:flex;
-/*justify-content:center;*/
 align-items:center;
+margin:20px auto;
 }
 .mainBanner>h2{
 color:#000;
@@ -113,9 +112,10 @@ font-family:sans-sarif;
 /*height:30vh;*/
 width:100%;
 background:var(--primaryColor);
+position:relative;
 }
 .secondarySection div{
-padding:1em;
+padding:1em .8em;
 margin:0 auto;
 }
 .h2{
@@ -137,8 +137,7 @@ font-weight:400;
 }
 .secondarySection img{
 position:absolute;
-right:20px;
-top:620px;
+right:1px;
 width:500px;
 height:500px;
 }
@@ -150,8 +149,6 @@ height:500px;
 
 /* Coding intro section */
 .codingArea{
-/*margin:15px 0;*/
-/*height:30vh;*/
 width:100%;
 padding:20px;
 }
@@ -194,7 +191,6 @@ text-align:center;
 
 /* photo gallary */
 .contactMe{
-	/*height:30vh;*/
 	width:100%;
 	padding:10px;
 	background: #f2f2f2;
@@ -242,7 +238,7 @@ display:flex;
 color:var(--white);
 z-index:1;
 width:100vw;
-height:10vh;
+height:100%;
 background:var(--black);
 }
 .footMainContent{
@@ -267,7 +263,7 @@ font-size:1.5em;
 font-family:Monospace;
 }
 .leftSide{
-	border:1px solid white;
+	border-right:.5px solid white;
 	flex:.3;
 }
 .leftSide ul{
@@ -303,7 +299,7 @@ color:var(--white);
 	}	
 	.mainBanner h2{
 		font-size:1.5em;
-		padding:3em .2em;
+		padding:3em 1em;
 	}
 	.mainBanner h2 span{
 		font-size:1.5em;
@@ -374,12 +370,12 @@ color:var(--white);
 		flex:1;
 		display:flex;
 		flex-direction:column;
-		padding:5%;
-		border:1px solid var(--greyDark);
+		padding:2% 3%;
+		justify-content:center;
 	}
 	.footMainContent h2{
-		font-size:1.5em;
-		line-height:30px;
+		font-size:1.1em;
+		line-height:20px;
 	}
 	.footMainContent h5,h6{
 		margin-top:5px;
