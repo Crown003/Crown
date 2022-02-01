@@ -88,9 +88,11 @@ nav ul li:hover,nav ul li:focus{
 
 /* Heading section*/
 .mainBanner{
-height:20vh;
+height:30vh;
 width:100vw;
-padding-top:40px;
+display:flex;
+/*justify-content:center;*/
+align-items:center;
 }
 .mainBanner>h2{
 color:#000;
@@ -136,7 +138,7 @@ font-weight:400;
 .secondarySection img{
 position:absolute;
 right:20px;
-top:470px;
+top:620px;
 width:500px;
 height:500px;
 }
@@ -366,7 +368,7 @@ color:var(--white);
 	}
 	/* footer Styling */
 	footer{
-	height:25vh;
+	height:100%;
 	}
 	.footMainContent{
 		flex:1;
@@ -503,15 +505,12 @@ color:var(--white);
 </div>   
 <script>
 let nav = document.getElementById("navUL");
-let mainH2 = document.getElementById("mainBannerH2");
 function myFunction(){
   	if(nav.style.display === "block"){
   		nav.style.display = "none";
-  		mainH2.style.padding = "3em .2em";
   	}
   	else{
   		nav.style.display = "block";
-  		mainH2.style.padding = "5em .2em";
   	}
 };
 let fname = document.getElemenetById("UserName");
