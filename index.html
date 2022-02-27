@@ -4,6 +4,7 @@
     <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>crownWeb.com</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <link rel="stylesheet" href="./index.css">
   </head>
 <style>
@@ -404,7 +405,7 @@ color:var(--white);
 	        <div class="navbarLogo">
 	          <img src="https://media.discordapp.net/attachments/842967344128721018/937010298009813052/Logo-1.png" alt="logo"/>
 	        </div>
-	        <div onclick="myFunction();" class="navbarIcon">
+	        <div onclick="myFunction();" id="navbtn" class="navbarIcon">
 	          <div></div>
 	          <div></div>
 	          <div></div> 
@@ -497,17 +498,12 @@ color:var(--white);
       	</div>
     </footer>
 </div>   
-<!--<script src="./index.html"></script>-->
 <script>
-let nav = document.getElementById("navUL");
-function myFunction(){
-  	if(nav.style.display === "block"){
-  		nav.style.display = "none";
-  	}
-  	else{
-  		nav.style.display = "block";
-  	}
-};
+	$(function(){
+		$("#navbtn").click(function(){
+			$("#navUL").slideToggle(500);
+		});
+	});
 let name = document.getElementById("UName");
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx4HNyJRCesqF_ejMLKTt2JfR0bcP2fQj0Zua9MDCSYv-m8gN3doubeDa73K091B9Uh/exec'
 const form = document.forms['contact'] 
