@@ -1,500 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>crownWeb.com</title>
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-  <link rel="stylesheet" href="./index.css">
-  </head>
-<style>
-:root {
-	--primaryColor:#8D3eff;
-	--fadePrimaryColor:#8a3efa;
-	--white: #ffffff;
-	--black: #212121;
-	--greyDark: #72727280;
-	--secondaryColor: #F44336;
-	--ancentColor: #ff5722;
-}
-  *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-/* slide to top button (only for mobile use)*/
-/*https://drive.google.com/file/d/1hzO0OHxIyZJ2qp-oYTaSRQG1aefrh1ai/view?usp=drivesdk*/
-#fxd{
-display:none;
-}
-html{
-scroll-behavior: smooth;
-}
-/* main container*/
-.container{
-	max-width:1000vh;
-	min-height:100vh;
-	height:100%;
-	width:100vw;
-	background:#f1f1f1;
-}
-
-/* Navbar Styling*/
-nav{
-  display: flex;
-  flex-direction: column;
-  font-family:Popins;
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  background:var(--primaryColor);
-  z-index:999;
-}
-.navbarIcon{
-  position:absolute;
-  right:.5em;
-  top:.5em;
-}
-.navbarIcon div{
-  height:4px;
-  width:30px;
-  background:#fff;
-  margin:4px 0;
-}
-.navbarLogo{
-  display:inline-block;
-}
-.navbarLogo img{
-	width:40px;
-	height:40px;
-}
-nav ul{
-  display:none;
-  list-style:none;
-  padding:.5em;
-  width:100%;
-  justify-content:flex-end;
-  margin:5px auto;
-  background:var(--fadePrimaryColor);
-}
-nav ul a{
-  text-decoration:none;
-}
-nav ul li{
-  color:#fff;
-  margin:.2em auto;
-  padding:5px; 
-}
-nav ul li:hover,nav ul li:focus{
-  background:var(--fadePrimaryColor);
-}
-
-/* Heading section*/
-.mainBanner{
-width:100vw;
-display:flex;
-align-items:center;
-margin:20px auto;
-}
-.mainBanner>h2{
-color:#000;
-font-weight:600;
-padding:3em 1em;
-font-size:2.2em;
-font-family:arial;
-}
-.mainBanner h2 span{
-display:block;
-color:var(--primaryColor);
-font-size:2em;
-font-family:sans-sarif;
-}
-
-/* My introduction Section*/
-.secondarySection{
-/*height:30vh;*/
-width:100%;
-background:var(--primaryColor);
-position:relative;
-}
-.secondarySection div{
-padding:1em .8em;
-margin:0 auto;
-}
-.h2{
-font-size:3em;
-color:#fff;
-font-weight:500;
-font-family:'Verdana',Sans-sarif;
-}
-.secondarySection p{
-color:#fff;
-padding:10px 12px;
-margin:5% 2%;
-border-radius:11px;
-width:40%;
-background:#f1f1f150;
-font-size:1.7em;
-font-family:Geneva;
-font-weight:400;
-}
-.secondarySection img{
-position:absolute;
-right:1px;
-width:500px;
-height:500px;
-}
-.hr{
- height:2px;
- background:#5500ff80;
- width:98%
-}
-
-/* Coding intro section */
-.codingArea{
-width:100%;
-padding:20px;
-}
-.codingArea > h2{
-color:black;
-font-size:3.5em;
-font-family:arial;
-text-align:center;
-}
-.codingLangIntro{
-	width:100%;
-	height:90%;
-	padding:40px 20px;
-	display:flex;
-	justify-content: space-evenly;
-}
-.codingLangIntro div{
-	flex:1;
-	width:30%;
-	text-align:center;
-	margin:15px 10px;
-	border-radius:15px;
-	border:1px solid var(--primaryColor);
-}
-
-.codingLangIntro div img{
-	width:10em;
-	height:10em;
-	margin:5px;
-}
-.codingLangIntro div h5{
-	position:relative;
-	bottom:25px;
-	left:5px;
-	font-size:1.5em;
-}
-.codingLangIntro div p{
-	padding:5px 10px;
-}
-
-/* photo gallary */
-.contactMe{
-	width:100%;
-	padding:10px;
-	background: #f2f2f2;
-}
-.contactMe h2{
-	font-size:3em;
-	font-family:Verdana;
-	padding-left:55px;
-	color:var(--fadePrimaryColor);
-}
-.contactMe .form{
-	display:flex;
-	margin:10px auto;
-	flex-direction:column;
-	padding:10px;
-	width:90%;
-}
-.contactMe .form label{
-	font-family:Popins;
-	font-weight:600;
-	color:#000;
-
-}
-.contactMe .form input[type="submit"]{
-	background:var(--ancentColor);
-	color:#fff;
-	width:20%;
-	font-weight:900;
-	font-family: arial;
-	text-align:center;
-	border:none;
-	outline:none;
-}
-.contactMe .form input,textarea{
-	background:transparent;
-	padding:8px 5px;
-	border:1px solid var(--fadePrimaryColor);
-	outline:none;
-	border-radius:8px;
-	margin:10px 0;
-}
-/* footer Styling */
-footer{
-display:flex;
-color:var(--white);
-z-index:1;
-width:100vw;
-height:100%;
-background:var(--black);
-}
-.footMainContent{
-	flex:1;
-	display:flex;
-	flex-direction:column;
-	padding:5%;
-	border:1px solid white;
-	font-family:Popins;
-}
-.footMainContent h2{
-	font-size:2em;
-	line-height:30px;
-}
-.footMainContent h5,h6{
-	margin-top:10px;
-}
-.leftSide h3{
-text-align:center;
-padding:10px;
-font-size:1.5em;
-font-family:Monospace;
-}
-.leftSide{
-	border-right:.5px solid white;
-	flex:.3;
-}
-.leftSide ul{
-	padding:15px;
-	position:relative;
-}
-.leftSide ul li{
-	list-style:none;
-	position:relative;
-	bottom:3px;
-	margin-left:25px;
-	line-height:30px;
-	font-family:Lucida Bright;
-}
-.leftSide ul a {
-text-decoration:none;
-color:var(--white);
-}
-.leftSide ul img{
-	position:absolute;
-	width:20px;
-	height:20px;
-}
-
-@media screen and (max-width:768px){
-	.mainBanner{
-		height:35vh;
-		width:100vw;
-		padding-top:40px;
-	}	
-	.mainBanner h2{
-		font-size:1.5em;
-		padding:3em 1em;
-	}
-	.mainBanner h2 span{
-		font-size:1.5em;
-	}
-	.secondarySection div h2{
-		font-size:2em;
-		padding-left:8px;
-	}
-	.secondarySection p{
-	font-size:1em;
-	width:auto;
-	border-radius:2px;
-	}
-	.secondarySection img{
-	display:none;
-	}
-	.hr{
-		display:none;
-	}
-	
-	.codingArea{
-	padding:20px  10px;
-	}
-	.codingArea > h2{
-	font-size:2.5em;
-	}
-	.codingLangIntro{
-		display:flex;
-		flex-direction:column;
-		justify-content: space-evenly;
-	}
-	.codingLangIntro div{
-		width:90%;
-		margin:6px auto;
-	}
-	.codingLangIntro div img{
-		width:8em;
-		height:8em;
-	}
-	.codingLangIntro div h5{
-		position:relative;
-		bottom:25px;
-		font-size:1em;
-	}
-	.codingLangIntro div p{
-		padding:5px 10px;
-		margin:10px 0;
-	}
-
-	#fxd{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	position:fixed;
-	right:10px;
-	bottom:10px;
-	background:var(--primaryColor);
-	border-radius:11px;
-	width:40px;
-	height:40px;
-	z-index:999;
-	}
-	/* footer Styling */
-	footer{
-	height:100%;
-	}
-	.footMainContent{
-		flex:1;
-		display:flex;
-		flex-direction:column;
-		padding:2% 3%;
-		justify-content:center;
-	}
-	.footMainContent h2{
-		font-size:1.1em;
-		line-height:20px;
-	}
-	.footMainContent h5,h6{
-		margin-top:5px;
-	}
-	.leftSide h3{
-	padding:5px 10px;
-	font-size:1em;
-	font-family:Monospace;
-	}
-	.leftSide ul li{
-		list-style:none;
-		position:relative;
-		bottom:7px;
-		font-size:.7em;
-		margin-left:18px;
-	}
-	.leftSide ul img{
-		width:15px;
-		height:15px;
-	}	
-}
-  </style>
-  <body>
-  <div id="cont" class="container">
+  <script src="https://cdn.tailwindcss.com"></script>
+  </head>                 
+<body class="width-100 bg-black">
+ <!-- <div id="cont" class="">
   <a style="text-decoration:none;color:white;"href="#cont"><div id="fxd" >&#8593</div></a>
-  	<div class="header">
-	      <nav id="nav">
-	        <div class="navbarLogo">
-	          <img src="https://cdn.discordapp.com/attachments/842967344128721018/937010298009813052/Logo-1.png?ex=65e34957&is=65d0d457&hm=3d90806411786766084e8f38e1f985f96905ac5e2de5b689de22cefd774d8dc5&" alt="logo"/>
-	        </div>
-	        <div onclick="myFunction();" id="navbtn" class="navbarIcon">
-	          <div></div>
-	          <div></div>
-	          <div></div> 
-	        </div>
-	        <ul id="navUL">
-	          <a href="#cont"><li>Home</li></a>
-	          <a href="#intro"><li>About me</li></a>
-	          <a href="#codingArea"><li>My Coding World</li></a>
-	          <a href="#contactMe"><li>Contact me</li></a>
-		</ul>
-	      </nav>
-    </div>
-    <!-- Mainbanner secrion-->
-    <div id="mainBanner">
-	    <section class="mainBanner">
-	    	<h2 id="mainBannerH2">Welcome to my <span>Portfolio Website.</span></h2>
-	    </section>
+  -->	
+<nav class="bg-white/30 backdrop-blur-sm fixed w-full z-20 top-0 start-0 flex flex-col justify-between px-5">
+	<div class="w-full h-auto flex justify-between">
+	<a href="#" class="w-10 items-center">
+	       <img src="https://cdn.discordapp.com/attachments/842967344128721018/937010298009813052/Logo-1.png?ex=65e34957&is=65d0d457&hm=3d90806411786766084e8f38e1f985f96905ac5e2de5b689de22cefd774d8dc5&" alt="logo"/>    
+	  </a>
+        <div  id="navbtn" class="text-4xl text-white dark:text-black">
+	          	&equiv;
+	    </div>
 	   </div>
-	   <div id="intro">
-	    <section class="secondarySection">
-	    	<div>
-	    		<h2 class="h2">My Introduction</h2><hr class="hr">
-	    		<img src="https://cdn.discordapp.com/attachments/842967344128721018/937076976517271592/20220130_013910.png?ex=65e38771&is=65d11271&hm=c304fe963cd517deb4a3d05bf8253f9c38652d4728214eb19d93097351c03a8b&"  alt="introIllustration">
-	    		<p>&bull; My self Harshit. A student at Svm Sultanpur in 12<sup>th</sup> standard.
-	    		</p>
+	    <ul id="navUL" class="hidden flex flex-col p-4 md:p-2 my-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-800 md:justify-center dark:border-gray-700">
+	      <li>
+	        <a href="#mainBanner" class="block py-2 px-3 md:text-center text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+	      </li>
+	      <li>
+		        <a href="#intro" class="block py-2 px-3 md:text-center text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+	      </li>
+	      <li>
+	        <a href="#codingArea" class="block py-2 md:text-center px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+	      </li>
+	      <li>
+	        <a href="#contactMe" class="block py-2 px-3 md:text-center text-gray-900 rounded hover:bg-gray-100  md:hover:text-white md:p-0  dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-red-300 dark:border-gray-700">Contact</a>
+	      </li>
+    	</ul>
+ </nav>
+
+    <!-- Mainbanner secrion-->
+    <header id="mainBanner" class="w-100 h-[100vh] bg-slate-950">
+	    <section style="background-image: url('https://images.pexels.com/photos/240572/pexels-photo-240572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')" class="w-100 h-[100%] font-mono font-bold flex justify-center items-center bg-no-repeat bg-cover">
+	    	<h2 id="mainBannerH2" class="text-2xl text-white md:text-4xl">Welcome to my <span class="px-2 bg-red-600 text-white text-3xl md:text-6xl block">Portfolio Website.</span></h2>
+	    </section>
+	   </header>
+	   <main id="intro" class="w-100 h-auto p-10 bg-blue-300 ">
+	    <h2 class="text-3xl md:text-5xl font-bold">My Introduction</h2><hr>
+	    <section class="flex flex-col md:flex-row">
+	    		<img class="mix-blend-color-burn md:w-[50%] h-auto" src="https://cdn.discordapp.com/attachments/842967344128721018/937076976517271592/20220130_013910.png?ex=65e38771&is=65d11271&hm=c304fe963cd517deb4a3d05bf8253f9c38652d4728214eb19d93097351c03a8b&"  alt="introIllustration">
+	    		<div class="self-center text-blue-600 font-sans font-bold text-xl">
+	    		<p>&bull; My self Harshit!</p>
 	    		<p>&bull; I am also a Full-Stack devloper.</p>
 	    		<p>&bull; This is My first Portfolio Website</p>
-	    	</div>
+	    		</div>
 	    </section>
-    </div>
+    </main>
     <!--Coding Intro secrion-->
     <div id="codingArea">
-	    <section class="codingArea">
-	    	<h2>My Coding Journey</h2>
-	    	<div class="codingLangIntro">
-	    		<div>
+	    <section class="w-100 h-auto p-10  bg-green-300">
+	    	<h2 class="text-3xl md:text-5xl font-bold " >My Coding Journey</h2><hr>
+	    	<div class="flex flex-col md:flex-row gap-y-5 md:gap-x-5">
+	    		<div class="bg-slate-50 mt-2">
 	    			<img src="https://cdn.discordapp.com/attachments/842967344128721018/937449266065072139/20220131_021737.png?ex=65e4e229&is=65d26d29&hm=52a1eb24175c0f5e20b0a70d4a40c6036c2374a7c4c265f7a5bd8d42f2bed8e7&"  alt="webdevlogo">
+	    			<div class="bg-green-300 m-2 p-2 rounded">
 	    			<h5>Web Devlopment</h5>
 	    			<p>2+ year of experience</p>
 	    			<p>Able to create a fully function website</p>
 	    			<p>friendly with Django,React(basic) & Flask.</p>
+	    			</div>
 	    		</div>
-	    		<div>
+	    		<div class="bg-slate-50">
 	    			<img src="https://cdn.discordapp.com/attachments/842967344128721018/937449265821806632/20220131_021633.png?ex=65e4e229&is=65d26d29&hm=4aa0979320153622c587b1adf95a1796d497136c8c2f205fafd03f378b4e7391&"  alt="pythonprograminglanguage-logo">
+	    			<div class="bg-green-300 m-2 p-2 rounded">
 	    			<h5>Python</h5>
 	    			<p>Have Intermediate knowledge</p>
 	    			<p>Able to works at high level.</p>
 	    			<p> My first coding language.</p>
+	    			</div>
 	    		</div>
-	    		<div>
+	    		<div class="bg-slate-50">
 	    			<img src="https://cdn.discordapp.com/attachments/842967344128721018/937449266295742484/20220131_021815.png?ex=65e4e22a&is=65d26d2a&hm=b5e0d90207ad1c7e25c6aa300cf36f270749691dbf0367303c1c6d26ea79e62c&" alt="javascriptprograminglanguage-logo">
+	    			<div class="bg-green-300 m-2 p-2 rounded">
 	    			<h5>JavaScript</h5>
 	    			<p>Have beginner level knowledge</p>
 	    			<p>Working on this for 6+ months</p>
 	    			<p>learning oops concepts...</p>
+	    			</div>
 	    		</div>
 	    	</div>
 	    </section>
     </div>
     <!--contact section-->
     <div  id="contactMe">
-	    <section class="contactMe">
-	    	<h2>Contact Me</h2>
-	    		<Form autocomplete="off" name="contact" class="form">
-	    			<label for="UName"> Your Name:</label>
-	    			<input id="UName" type="text" placeholder="Your name" name="UserName" required>
-	    			<label for="UEmail"> Your Email:</label>
-	    			<input id="UEmail" type="email" placeholder="example@gmail.com" name="UserEmail" required>
-	    			<label for="UMsg"> Your Message:</label>
-	    			<textarea placeholder="Your message here..." id="UMsg" rows="5" name="UserMsg" required></textarea>
-	    			<input type="submit" value="Submit">
+	    <section class="w-100 h-auto p-10 bg-amber-400">
+	    	<h2 class="text-3xl md:text-5xl font-bold">Contact Me</h2><hr>
+	    		<Form autocomplete="off" name="contact" class="flex w-full flex-col py-2 my-2">
+		    		<div class="flex flex-col">
+			    		<label class="font-sans rounded font-semibold mt-2" for="UName"> Your Name:</label>
+			    		<input class="font-sans rounded p-1 font-semibold" id="UName" type="text" placeholder="Your name" name="UserName" required>
+	    			</div>
+	    			<div class="flex flex-col">
+	    			<label class="font-sans rounded font-semibold mt-2" for="UEmail"> Your Email:</label>
+	    			<input class="font-sans rounded p-1 font-semibold" id="UEmail" type="email" placeholder="example@gmail.com" name="UserEmail" required>
+	    			</div>
+	    			<div class="flex flex-col">
+	    			<label class="font-sans rounded font-semibold mt-2" for="UMsg"> Your Message:</label>
+	    			<textarea class="font-sans rounded p-1 font-semibold" placeholder="Your message here..." id="UMsg" rows="5" name="UserMsg" required></textarea>
+	    			</div>
+	    			<input class="w-[60%] self-center font-sans rounded font-semibold m-2 p-2 bg-red-400" type="submit" value="Submit">
 	    		</Form>
 	    </section>
     </div>
     <!--footer section-->
-      <footer>
-      	<div class="leftSide">
-      	<h3>My socials </h3>
-      		<ul>
+      <footer class="w-100 bg-red-300 flex p-5">
+      	<div class="flex flex-col">
+      		<ul class="text-sm">
       			<!--<a href="https://www.instagram.com/crown__003/" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427296086790204/20220131_005039.png"><li>crown__003</li></a>
       			<a href="https://www.facebook.com/profile.php?id=100058274305775" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427295466045510/20220131_004952.png"><li>Harshit tiwari</li></a>-->
       			<!--<a href="https://twitter.com/crown_gaming21" target="__blank"><img src="https://media.discordapp.net/attachments/842967344128721018/937427295763857438/20220131_005012.png"><li>crown_gaming21</li></a>-->
-      			<a href="https://github.com/Crown003" target="__blank"><img src="https://cdn.discordapp.com/attachments/842967344128721018/937427295185010688/20220131_004923.png?ex=65e4cdb3&is=65d258b3&hm=04325227079bac495c3104631b5af62eb6ee4a811d3bc857010247ac2edaf03b&"><li>Crown003</li></a>
-			<a href="https://www.linkedin.com/in/harshit-tiwari003" target="__blank"><img src="https://cdn.discordapp.com/attachments/842967344128721018/1210433293254791188/20240223_091915.png?ex=65ea8ad9&is=65d815d9&hm=9a1eb51456f005633eadc0e4e8302d3c2191c76a3a4e4c9e3a721cfa572786fa&"><li>HARSHIT (Crown) Tiwari</li></a>
+      			<a href="https://github.com/Crown003" target="__blank"><img class="w-10" src="https://cdn.discordapp.com/attachments/842967344128721018/937427295185010688/20220131_004923.png?ex=65e4cdb3&is=65d258b3&hm=04325227079bac495c3104631b5af62eb6ee4a811d3bc857010247ac2edaf03b&"></a>
+				  <a href="https://www.linkedin.com/in/harshit-tiwari003" target="__blank"><img class="w-10" src="https://cdn.discordapp.com/attachments/842967344128721018/1210433293254791188/20240223_091915.png?ex=65ea8ad9&is=65d815d9&hm=9a1eb51456f005633eadc0e4e8302d3c2191c76a3a4e4c9e3a721cfa572786fa&"></a>
       		</ul>
       	</div>
-      	<div class="footMainContent">
+      	<div class="text-justify w-90">
       		<h2>Thankyou for visiting my site.</h2>
       		<h5> developed & managed by Crown.</h5>
       		<h6>&copy 2022-23 | All rights reserved to Harshit.</h6>
@@ -506,6 +132,9 @@ color:var(--white);
 		$("#navbtn").click(function(){
 			$("#navUL").slideToggle(500);
 		});
+	});
+	$(function(){
+		$("")
 	});
 let name = document.getElementById("UName");
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx4HNyJRCesqF_ejMLKTt2JfR0bcP2fQj0Zua9MDCSYv-m8gN3doubeDa73K091B9Uh/exec'
